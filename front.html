@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div {
+            background: url('/quiz/images/stock-vector-quiz-speech-bubble-banner-with-quiz-text-glassmorphism-style-for-business-marketing-and-2018476604.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+       
+            height: 180vh;
+            margin-top: -300px;
+            display: flex;
+
+            justify-content: center;
+            /* Horizontally center */
+            align-items: center;
+            /* Vertically center */
+            position: relative;
+        }
+
+        input {
+            margin-top: -204px;
+            padding: 10px;
+            font-size: 16px;
+            margin-left: -10px;
+            position: absolute;
+
+            border-radius: 5px;
+            z-index: 1;
+            /* Ensure it's above the background */
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Slight transparency for style */
+            border: none;
+
+        }
+
+        input:focus {
+            outline: none;
+            /* Remove the default focus outline */
+            border: 2px solid white;
+            /* Highlight border with white on focus */
+        }
+        p{
+            margin-top: -50px;
+            margin-left: 40px;
+            color: white;
+            width: 200px;
+
+        }
+        button{
+            background-color: rgba(62, 4, 73, 0.8);
+            border: 1px solid rgb(23, 1, 27);;
+            color: white;
+            border: none;
+            height: 30px;
+            border-radius: 5px;
+            width: 100px;
+            margin-top: 500px;
+            position: absolute;
+            display: none; /* Initially hide the button */
+
+        }
+        button:hover{
+            background-color: rgba(37, 2, 44, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" placeholder="Enter your name" id="input">
+        <p id="pera"></p>
+        <button id="startButton" onclick="openPage()">Get Started</button>
+    </div>
+
+    <script>
+        const input = document.getElementById('input');
+        const p = document.getElementById('pera');
+        const startButton = document.getElementById('startButton');
+
+        input.addEventListener("input", function () {
+            // Reflect the input value into the paragraph
+            p.textContent = `Welcome ${input.value}`;
+
+            // Show button if input is not empty, otherwise hide it
+            if (input.value.trim() !== "") {
+                startButton.style.display = "block"; // Show the button
+            } else {
+                startButton.style.display = "none"; // Hide the button
+            }
+        });
+
+        function openPage() {
+            window.location.href = "/quiz/index.html"; // replace with your HTML page's path
+        }
+    </script>
+</body>
+
+</html>
